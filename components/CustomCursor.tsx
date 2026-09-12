@@ -1,0 +1,5 @@
+'use client';
+import {useEffect,useRef} from 'react';
+import gsap from 'gsap';
+import {useMotion} from '@/hooks/useMotionPreference';
+export default function CustomCursor(){const ref=useRef<HTMLDivElement>(null);const motion=useMotion();useEffect(()=>{const el=ref.current;if(!el||!motion||!matchMedia('(pointer:fine)').matches)return;const x=gsap.quickTo(el,'x',{duration:.4,ease:'power3.out'});const y=gsap.quickTo(el,'y',{duration:.4,ease:'power3.out'});const move=(e:PointerEvent)=>{x(e.clientX);y(e.clientY);el.style.opacity=(e.target as HTMLElement).closest('[role=dialog],video')?'0':'1';const target=(e.target as HTMLElement).closest<HTMLElement>('[data-cursor],a,button');el.textContent=target?.dataset.cursor||'';el.classList.toggle('cursor-expanded',!!el.textContent)};const leave=()=>{el.style.opacity='0'};window.addEventListener('pointermove',move);document.addEventListener('pointerleave',leave);return()=>{window.removeEventListener('pointermove',move);document.removeEventListener('pointerleave',leave);gsap.killTweensOf(el);el.style.opacity='0'}},[motion]);return <div ref={ref} className="custom-cursor" aria-hidden="true"/>}

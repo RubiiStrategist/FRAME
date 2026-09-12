@@ -1,0 +1,8 @@
+export type Project={id:string;title:string;client:string;year:string;category:string;services:string[];thumbnail:string;video?:string;description:string};
+// Projetos demonstrativos. Substitua assets em /public/projects/marketing/.
+export const marketing:Project[]=[
+{id:'forma',title:'Além da forma.',client:'FORMA',year:'2026',category:'BRAND FILM',services:['Branding','Creative Direction'],thumbnail:'/projects/marketing/desert.jpg',description:'Arquitetura, silêncio e uma nova perspectiva. Um estudo visual sobre marcas que ocupam seu próprio espaço.'},
+{id:'raw',title:'Sem roteiro.',client:'RAW CULTURE',year:'2026',category:'EDITORIAL',services:['Social Media','Audiovisual'],thumbnail:'/projects/studio/portrait.jpg',video:'/projects/marketing/raw.webm',description:'Um olhar próximo e espontâneo sobre a cultura de uma nova geração.'},
+{id:'noir',title:'Own the night.',client:'NOIR',year:'2026',category:'FASHION CAMPAIGN',services:['Creative Direction','Content Production','Campaigns'],thumbnail:'/projects/marketing/noir.jpg',video:'/projects/marketing/noir.webm',description:'Atitude em cada enquadramento. Um conceito de campanha que explora identidade, presença e expressão.'},
+{id:'terra',title:'O tempo é outro.',client:'TERRA',year:'2026',category:'BRAND STRATEGY',services:['Marketing Strategy','Paid Traffic'],thumbnail:'/projects/marketing/desert.jpg',description:'Menos ruído, mais significado. Estratégia e imagem na mesma direção.'},
+{id:'muse',title:'Uma nova presença.',client:'MUSE',year:'2026',category:'CREATIVE DIRECTION',services:['Branding','Campaigns'],thumbnail:'/projects/marketing/noir.jpg',description:'Expressão pessoal transformada em linguagem de marca.'}];

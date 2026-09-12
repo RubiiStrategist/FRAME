@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "../vendor/shadcn-tailwind-4.13.0.css";
+@import "../styles/frame.css";
+@import "../styles/case-cinema.css";
+@import "../styles/cinema.css";
+:root{--background:#070909;--foreground:#f4f5f1;--muted:#151e28;--muted-foreground:#a4adb6;--border:#30404c;--ring:#dbf2ec;--radius:12px;--popover:#101822;--popover-foreground:#f4f5f1;--primary:#dbf2ec;--primary-foreground:#070909;--accent:#243942;--accent-foreground:#f4f5f1}
+@theme inline{--color-background:var(--background);--color-foreground:var(--foreground);--color-muted:var(--muted);--color-muted-foreground:var(--muted-foreground);--color-border:var(--border);--color-ring:var(--ring);--color-accent:var(--accent);--color-accent-foreground:var(--accent-foreground);--font-sans:Arial,Helvetica,sans-serif;}

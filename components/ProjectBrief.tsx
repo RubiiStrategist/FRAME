@@ -1,0 +1,23 @@
+'use client';
+import {useState,useEffect,useRef,type FormEvent} from 'react';
+import {Dialog,DialogContent,DialogTitle,DialogDescription,DialogTrigger,DialogClose} from '@/components/ui/dialog';
+import {Tabs,TabsList,TabsTrigger,TabsContent} from '@/components/ui/tabs';
+import {Input} from '@/components/ui/input';
+import {Textarea} from '@/components/ui/textarea';
+import {contact} from '@/data/config';
+import {useMotion} from '@/hooks/useMotionPreference';
+export default function ProjectBrief({initial='marketing',label='Planejar meu próximo frame'}:{initial?:string;label?:string}){
+ const [mode,setMode]=useState(initial);
+ const result=useRef<HTMLTextAreaElement>(null);const motion=useMotion();
+ const [drafts,setDrafts]=useState<Record<string,{name:string;idea:string;place:string;date:string}>>({marketing:{name:'',idea:'',place:'',date:''},studio:{name:'',idea:'',place:'',date:''}});
+ const draft=drafts[mode];
+ function update(field:string,value:string){setDrafts(previous=>({...previous,[mode]:{...previous[mode],[field]:value}}));setBrief('');setStatus('')}
+const [brief,setBrief]=useState('');const [status,setStatus]=useState('');
+ useEffect(()=>{if(!brief)return;const tick=requestAnimationFrame(()=>{result.current?.focus({preventScroll:true});result.current?.closest('.brief-result')?.scrollIntoView({block:'nearest',behavior:motion?'smooth':'instant'})});return()=>cancelAnimationFrame(tick)},[brief,motion]);
+ function prepare(e:FormEvent<HTMLFormElement>){e.preventDefault();const data=new FormData(e.currentTarget);if(!String(data.get('name')).trim()||!String(data.get('idea')).trim()){setStatus('Preencha o nome e uma breve descrição do projeto.');return}setBrief(`MEU PRÓXIMO FRAME\n\n${mode==='marketing'?'MARCA & CAMPANHA':'EVENTO & COBERTURA'}\nProjeto: ${data.get('name')}\n${mode==='studio'?`Local: ${data.get('place')||'A definir'}\nData: ${String(data.get('date')||'').split('-').reverse().join('/')||'A definir'}\n`:''}O que preciso: ${data.get('idea')}\n`);setStatus('Resumo preparado. Ele ainda não foi enviado à FRAME.')}
+ async function copy(){try{await navigator.clipboard.writeText(brief);setStatus('Resumo copiado. Pronto para compartilhar.')}catch{setStatus('Selecione o texto abaixo para copiar manualmente.')}}
+ return <Dialog><DialogTrigger className="brief-trigger">{label}<span>↗</span></DialogTrigger><DialogContent className="brief-modal" showCloseButton={false}><DialogClose className="modal-close" aria-label="Fechar planejamento">×</DialogClose><span className="brief-eyebrow">O PRIMEIRO FRAME É UMA CONVERSA.</span><DialogTitle>O que vamos<br/><em>criar juntos?</em></DialogTitle><DialogDescription>Prepare um resumo do seu projeto para copiar e compartilhar. Nenhuma informação é enviada automaticamente.</DialogDescription>
+ <Tabs value={mode} onValueChange={value=>{setMode(value);setBrief('');setStatus('')}}><TabsList className="brief-tabs"><TabsTrigger value="marketing">Minha marca</TabsTrigger><TabsTrigger value="studio">Meu evento</TabsTrigger></TabsList><TabsContent value={mode}>
+ <form onSubmit={prepare} key={mode}><label>Nome {mode==='marketing'?'da marca ou projeto':'do evento'}<Input name="name" value={draft.name} onChange={e=>update('name',e.target.value)} required maxLength={120} placeholder={mode==='marketing'?'Como se chama sua marca?':'Qual momento vamos registrar?'}/></label>{mode==='studio'&&<div className="brief-fields"><label>Cidade / local<Input name="place" value={draft.place} onChange={e=>update('place',e.target.value)} maxLength={120} placeholder="Pode ser a definir"/></label><label>Data, se já souber<Input name="date" value={draft.date} onChange={e=>update('date',e.target.value)} type="date"/></label></div>}<label>{mode==='marketing'?'O que você quer comunicar ou mudar?':'Como você quer lembrar desse evento?'}<Textarea name="idea" value={draft.idea} onChange={e=>update('idea',e.target.value)} required maxLength={2000} rows={3} placeholder={mode==='marketing'?'Uma nova marca, uma campanha, conteúdo para redes…':'Fotos, filme de melhores momentos, cortes para redes…'}/></label><button className="brief-submit" type="submit">Preparar meu resumo ↗</button></form></TabsContent></Tabs>
+ {brief&&<div className="brief-result"><label>Seu próximo frame<Textarea ref={result} readOnly value={brief} rows={6} onFocus={e=>e.currentTarget.select()}/></label><div><button onClick={copy}>Copiar resumo ↗</button>{contact.email&&<a href={`mailto:${contact.email}?subject=${encodeURIComponent('Meu próximo FRAME')}&body=${encodeURIComponent(brief)}`}>Abrir no e-mail ↗</a>}</div></div>}<p className="brief-status" role="status">{status}</p></DialogContent></Dialog>;
+}

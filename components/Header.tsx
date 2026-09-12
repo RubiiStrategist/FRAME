@@ -1,0 +1,8 @@
+'use client';
+import {useState} from 'react';
+import {Dialog,DialogClose,DialogContent,DialogTitle,DialogDescription,DialogTrigger} from '@/components/ui/dialog';
+import BrandLogo from './BrandLogo';
+export default function Header({onMode}:{onMode:(mode:string)=>void}){
+ const [open,setOpen]=useState(false);function navigate(mode:string){setOpen(false);onMode(mode)}
+ return <header className="header cinema-header"><a href="#" className="logo" aria-label="FRAME início"><BrandLogo/></a><a className="header-contact" href="#contact">Seu próximo frame ↗</a><Dialog open={open} onOpenChange={setOpen}><DialogTrigger className="frame-menu-trigger">Menu <span><i/><i/></span></DialogTrigger><DialogContent className="menu-modal director-menu" showCloseButton={false}><DialogClose className="modal-close" aria-label="Fechar menu">×</DialogClose><div className="menu-photo"><img src="/projects/studio/event.jpg" alt=""/><span>MARCA OU MOMENTO.<br/>FAÇA FICAR.</span></div><div className="menu-content"><DialogTitle><BrandLogo/></DialogTitle><DialogDescription className="sr-only">Explore os projetos, conheça a FRAME ou planeje seu próximo projeto.</DialogDescription><nav><button onClick={()=>navigate('overview')}><small>01</small> Nosso olhar</button><button onClick={()=>navigate('marketing')}><small>02</small> Sua marca</button><button onClick={()=>navigate('studio')}><small>03</small> Seu evento</button><a href="#about" onClick={()=>setOpen(false)}><small>04</small> A FRAME</a><a href="#contact" onClick={()=>setOpen(false)}><small>↗</small> Vamos criar</a></nav><p>Estratégia + produção audiovisual<br/>São Paulo / Brasil</p></div></DialogContent></Dialog></header>
+}
