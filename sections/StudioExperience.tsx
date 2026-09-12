@@ -1,0 +1,6 @@
+'use client';
+import {useState} from 'react';
+import {studio} from '@/data/studio';
+import type {Project} from '@/data/marketing';
+import VideoPlayer from '@/components/VideoPlayer';
+export default function StudioExperience({onOpen}:{onOpen:(project:Project)=>void}){const [playing,setPlaying]=useState(true);const selected=[studio[2],studio[1],studio[0]];return <section className="studio-section"><div className="section-meta"><span>FRAME STUDIO / EVENTOS & HISTÓRIAS</span><button className="motion-toggle" onClick={()=>setPlaying(p=>!p)} aria-pressed={!playing}>{playing?'PAUSAR PRÉVIAS Ⅱ':'REPRODUZIR ▷'}</button></div><h2>Para quem esteve lá.<br/><em>Para quem vai sentir.</em></h2><p className="gallery-description">Fotografia, filmes e coberturas com atenção às pessoas, à atmosfera e aos detalhes.</p>{selected.map((p,i)=><article className={`studio-project studio-${i}`} key={p.id}><button data-cursor="VER" onClick={()=>onOpen(p)} className="studio-image" aria-label={`Abrir ${p.title}`}><VideoPlayer poster={p.thumbnail} src={p.video} alt={p.title} active={playing}/><span>EXPLORAR ESTUDO ↗</span></button><div><h3>{p.title}</h3><span>{p.category} / {p.year} ↗</span></div></article>)}<p className="demo-note">ESTUDOS CONCEITUAIS COM IMAGENS DE REFERÊNCIA.</p></section>}
