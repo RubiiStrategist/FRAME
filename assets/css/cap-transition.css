@@ -1,0 +1,13 @@
+.cap-transition{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;background:radial-gradient(ellipse at center,#47100f,#090303 70%);opacity:0;visibility:hidden;pointer-events:none}
+.cap-transition-stage{position:relative;width:min(240px,50vw);height:min(350px,55svh)}
+.cap-transition-mascot{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 25px #e52b2044)}
+.cap-transition-flash{position:absolute;left:40%;top:19%;width:30px;height:30px;border-radius:50%;opacity:0;background:#fff9e8;box-shadow:0 0 28px 20px #ffe9be,0 0 110px 60px #ffd3ab88;pointer-events:none}
+.cap-transition-caption{position:absolute;top:calc(50% + min(175px,27.5svh) + 20px);font:600 10px Arial,sans-serif;letter-spacing:.3em;color:#ead8d3}
+.cap-transition.is-closing{visibility:visible;pointer-events:auto;animation:cap-cover .74s both!important}
+.cap-transition.is-closing .cap-transition-stage{animation:cap-snap .74s cubic-bezier(.18,.8,.2,1) both!important}
+.cap-transition.is-closing .cap-transition-flash{animation:cap-flash .74s linear both!important}
+.cap-transition.is-arriving{visibility:visible;pointer-events:none;animation:cap-reveal .24s ease-out both!important}
+@keyframes cap-cover{0%{opacity:0}18%,100%{opacity:1}}
+@keyframes cap-snap{0%{transform:translateY(18px) scale(.97);opacity:0}35%{opacity:1;transform:translateY(0) scale(1)}70%{transform:scale(1.015)}100%{transform:scale(1.02);opacity:1}}
+@keyframes cap-flash{0%,65%{opacity:0;transform:scale(.2)}73%{opacity:.45;transform:scale(1.1)}90%,100%{opacity:0;transform:scale(2)}}
+@keyframes cap-reveal{from{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(1.025);visibility:hidden}}
