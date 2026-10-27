@@ -1,0 +1,1 @@
+(()=>{const hero=document.getElementById('home-aprovada');new IntersectionObserver(entries=>{document.body.classList.toggle('a4-at-top',entries[0].isIntersecting)},{threshold:.12}).observe(hero)})();

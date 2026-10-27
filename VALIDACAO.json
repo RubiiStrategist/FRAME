@@ -1,0 +1,17 @@
+{
+  "pages": 22,
+  "local_html_references": 915,
+  "missing_assets": 0,
+  "videos_integrated": 6,
+  "home": [
+    "News Connect",
+    "Pizzaria Bom Sabor",
+    "Candy Celulares",
+    "LM Doces e Salgados"
+  ],
+  "original_bytes": 159659703,
+  "web_bytes": 59759112,
+  "fast_start": true,
+  "range_requests": 206,
+  "browser": "4 home videos decoded and playing; case Reginaldo controls and playback verified; mobile 390px no overflow"
+}

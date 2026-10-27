@@ -1,0 +1,1 @@
+(()=>{document.addEventListener('click',ev=>{const a=ev.target.closest?.('a[href]');if(!a||ev.defaultPrevented||a.target==='_blank'||a.hasAttribute('download'))return;try{if(parent!==window&&typeof parent.frameNavigate==='function')parent.frameNavigate(ev,a.href)}catch{}})})();

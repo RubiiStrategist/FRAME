@@ -1,0 +1,32 @@
+[
+  {
+    "client": "news-connect",
+    "original_bytes": 26628206,
+    "web_bytes": 10036071
+  },
+  {
+    "client": "pizzaria-bom-sabor",
+    "original_bytes": 26620548,
+    "web_bytes": 10051282
+  },
+  {
+    "client": "candy-celulares",
+    "original_bytes": 26608633,
+    "web_bytes": 9757179
+  },
+  {
+    "client": "lm-doces-salgados",
+    "original_bytes": 26598648,
+    "web_bytes": 9998264
+  },
+  {
+    "client": "jiu-jitsu-alexandre-macarrao",
+    "original_bytes": 26611416,
+    "web_bytes": 9912199
+  },
+  {
+    "client": "reginaldo",
+    "original_bytes": 26592252,
+    "web_bytes": 10004117
+  }
+]

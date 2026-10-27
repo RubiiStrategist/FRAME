@@ -1,0 +1,28 @@
+.case-duo-media:has(video[data-real-preview]){aspect-ratio:16/9!important;}
+.case-duo-media:has(video[data-real-preview]) .case-duo-brand{display:none;}
+.case-duo-media:has(video[data-real-preview]) .case-duo-overlay{background:linear-gradient(180deg,transparent 70%,#0005)!important;}
+.case-duo-media video[data-real-preview]{object-fit:contain!important;filter:none!important;transform:none!important;background:#080808;}
+.case-v37-film-shell:has(video[data-real-film]){aspect-ratio:16/9!important;height:auto!important;min-height:0!important;}
+video[data-real-film]{width:100%;height:100%;object-fit:contain!important;filter:none!important;background:#080808;}
+
+/* Original brand colours, restrained opacity and subtle interaction. */
+.case-duo-media:has(video[data-real-preview]) .case-duo-brand{display:flex;}
+.case-duo .client-logo-crossfade>img.client-logo-muted{opacity:0!important;}
+.case-duo .client-logo-crossfade>img.client-logo-color{opacity:.66!important;filter:saturate(.45) brightness(.95)!important;transform:scale(1)!important;transition:opacity .35s ease,filter .35s ease,transform .45s ease!important;}
+.case-duo:hover .client-logo-crossfade>img.client-logo-color,
+.case-duo:focus-visible .client-logo-crossfade>img.client-logo-color,
+.case-duo:active .client-logo-crossfade>img.client-logo-color{opacity:1!important;filter:none!important;transform:scale(1.025)!important;}
+.case-duo:hover .client-logo-crossfade>img.client-logo-muted,
+.case-duo:focus-visible .client-logo-crossfade>img.client-logo-muted,
+.case-duo:active .client-logo-crossfade>img.client-logo-muted{opacity:0!important;}
+.client-loop-card img{filter:none!important;opacity:1!important;}
+
+.client-loop-card:has(img[src="assets/clients/barbearia-ruan.png"]) {background:#dedbd6;border-color:#ffffff30;}
+
+.client-loop-card:has(img[src="assets/clients/imo-conchal.png"]) {background:#dedbd6;border-color:#ffffff30;}
+
+.client-loop-card:has(img[src="assets/clients/tempero-da-mah.png"]) {background:#dedbd6;border-color:#ffffff30;}
+/* Center the overlay independently of intrinsic PNG size and grid sizing. */
+.case-duo .case-duo-logo-wrap{inset:0!important;padding:0!important;transform:none!important;}
+.case-duo .case-duo-logo-wrap .client-logo-crossfade{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;padding:0!important;display:block!important;}
+.case-duo .case-duo-logo-wrap .client-logo-crossfade>img{position:absolute!important;left:50%!important;top:50%!important;translate:-50% -50%;width:80%!important;height:90%!important;max-width:100%!important;max-height:100%!important;margin:0!important;object-fit:contain!important;}

@@ -1,0 +1,32 @@
+/* Original FRAME lettering and dimensional props */
+.brand04{left:6%;top:16%;transform:none;width:clamp(190px,20vw,290px);text-align:left}
+.brand04>span{font-size:9px;margin-top:6px;letter-spacing:.22em;text-align:center}
+.word-anchor04{top:40%;width:91%;max-width:1800px}
+.word04,.scene04[data-scene="criacao"] .word04{display:block;width:100%;font-size:inherit;line-height:0;letter-spacing:0;filter:drop-shadow(0 12px 18px #0006)}
+.letter-art05{display:block;width:100%;height:auto;max-height:230px;object-fit:fill}
+.scene04[data-scene="criacao"] .word-anchor04{width:77%;max-width:1270px}
+.scene04[data-scene="marketing"] .word-anchor04{width:87%;max-width:1640px}
+.word04:after{content:"";background:radial-gradient(ellipse 210px 160px at var(--word-x,50%) var(--word-y,50%),#fff 0%,#fff7dc 20%,#ff9167 45%,transparent 78%);-webkit-mask:var(--letter-art) center/100% 100% no-repeat;mask:var(--letter-art) center/100% 100% no-repeat;mix-blend-mode:screen;filter:none}
+.character-anchor04,.scene04[data-scene="marketing"] .character-anchor04,.scene04[data-scene="criacao"] .character-anchor04{top:50%;height:31%}
+.object04 img{aspect-ratio:1;object-fit:contain}
+.object-film04{top:56%;left:13%;width:clamp(100px,13vw,190px)}
+.object-drone04{top:52%;left:76%;width:clamp(115px,15vw,225px)}
+.object-lens04{top:72%;width:75px}
+.scene04[data-scene="marketing"] .object-voice04{top:53%;left:12%;width:clamp(110px,14vw,205px)}
+.object-chart04{top:56%;left:80%;width:clamp(100px,12vw,180px)}
+.object-pencil04{top:54%;left:14%;width:clamp(100px,12vw,180px)}
+.object-palette04{top:56%;left:76%;width:clamp(100px,13vw,190px)}
+.scene04[data-scene="criacao"] .object-lens04{top:56%;left:62%;width:65px}
+.scene04[data-scene="marketing"] .note04{top:72%;font-size:16px;left:28%}
+.note04{top:77%;font-size:11px}
+.scene04[data-scene="criacao"] .note04{top:76%}
+@media(min-width:1700px){.brand04{top:14%}.word-anchor04{top:39%}}
+@media(max-width:760px){
+.brand04{top:12%;left:7%;width:185px}.brand04 img{max-height:70px}.brand04>span{font-size:7px}
+.word-anchor04{top:34%;width:96%}.scene04[data-scene="marketing"] .word-anchor04{width:94%}.scene04[data-scene="criacao"] .word-anchor04{width:88%}
+.letter-art05{min-height:75px;max-height:110px}
+.character-anchor04,.scene04[data-scene="marketing"] .character-anchor04,.scene04[data-scene="criacao"] .character-anchor04{top:43%;height:29%}
+.object-film04{top:51%;left:5%;width:78px}.object-drone04{top:43%;left:73%;width:92px}.object-lens04{top:65%;width:40px}
+.scene04[data-scene="marketing"] .object-voice04{top:44%;left:4%;width:84px}.object-chart04{top:60%;left:77%;width:78px}
+.object-pencil04{top:46%;left:3%;width:75px}.object-palette04{top:49%;left:76%;width:82px}.scene04[data-scene="criacao"] .object-lens04{top:65%;left:78%;width:40px}
+}

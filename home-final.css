@@ -1,0 +1,70 @@
+/* FRAME / final editorial direction */
+.home04{background:#090909}
+.home04 .cinematic-atmosphere{background:radial-gradient(ellipse at 70% 64%,#511b1930,transparent 55%),#090909;filter:none!important;opacity:1!important}
+.home04 .cinematic-atmosphere:after{opacity:.055}
+#frame-particles{opacity:.2}
+.immersive-home .immersive-nav{height:92px;padding:0 8%}
+.immersive-nav>nav{gap:32px}
+.immersive-nav a,.immersive-nav button:not(.menu-toggle){font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:600;letter-spacing:.09em}
+.brand04{left:8%;top:17%;width:205px}
+.brand04>span{font-size:8px;letter-spacing:.2em;color:#9d9a97}
+.word-anchor04{top:37%;width:84%}
+.scene04[data-scene="marketing"] .word-anchor04{width:78%}
+.scene04[data-scene="criacao"] .word-anchor04{width:63%}
+.letter-art05{height:145px}
+.word04{filter:drop-shadow(0 6px 12px #0005)}
+.word04:after{opacity:0;mix-blend-mode:soft-light}
+.home04.is-pointing .scene04.is-active .word04:after{opacity:.32}
+.halo04{opacity:0!important}
+.character-anchor04,.scene04[data-scene="marketing"] .character-anchor04,.scene04[data-scene="criacao"] .character-anchor04{left:65%;top:51%;height:30%;width:31%}
+.scene04[data-scene="criacao"] .character-anchor04{left:63%}
+.object04{opacity:.72}
+.object-film04{left:43%;top:60%;width:105px;rotate:-7deg}
+.object-drone04{left:83%;top:53%;width:125px;rotate:4deg}
+.scene04[data-scene="marketing"] .object-voice04{left:43%;top:57%;width:108px;rotate:-7deg}
+.object-chart04{left:83%;top:64%;width:105px;rotate:3deg}
+.object-pencil04{left:43%;top:54%;width:98px;rotate:-4deg}
+.object-palette04{left:82%;top:61%;width:112px;rotate:4deg}
+.object-lens04,.note04{display:none}
+.object04:hover img,.object04:focus-visible img{filter:drop-shadow(0 0 12px #f23b3233) brightness(1.08);scale:1.035}
+.mascot04:hover{filter:drop-shadow(0 12px 22px #0008);scale:1.01}
+.caption04{left:8%;right:auto;width:31%;bottom:20%;text-align:left}
+.description04{font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.9;letter-spacing:.08em;max-width:340px;color:#d0ceca}
+.mantra04{font-family:Arial,Helvetica,sans-serif;font-size:10px;line-height:1.6;letter-spacing:.08em;color:#777;margin-top:12px}
+.destination04{font-size:10px;letter-spacing:.07em;border:1px solid #ffffff30;padding:14px 18px;margin-top:25px;transition:background .2s,border-color .2s}
+.destination04:hover{background:#ffffff08;border-color:#ffffff70;text-shadow:none}
+.arrow04{font-size:42px;opacity:.55;top:49%;padding:12px 20px}
+.bottom04{left:8%;right:8%;bottom:25px}
+.discover04{display:block;margin-left:0;font:9px Arial,sans-serif;letter-spacing:.1em;color:#9c9995}
+.dots04{gap:10px}
+.dots04 button{width:7px;height:7px;border-color:#8c8883}
+.dots04 button.active{background:#ece6dc}
+.autoplay04{width:29px;height:29px;font-size:10px;border-color:#ffffff25;background:transparent;color:#aaa}
+body[data-motion="on"] .scene04.is-active .float04{animation:float-final 12s ease-in-out var(--phase,0s) infinite!important}
+body[data-motion="on"] .scene04.is-active .character-float04{animation:cap-final 14s ease-in-out infinite!important}
+body[data-motion="on"] .scene04.is-active .enter04{animation:enter-final 900ms cubic-bezier(.2,.7,.3,1) var(--delay,0ms) both!important}
+@keyframes float-final{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes cap-final{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes enter-final{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:1700px){.letter-art05{height:175px}.brand04{width:230px}}
+@media(max-width:1000px){.immersive-nav>nav{gap:23px}.caption04{width:35%}.object-drone04{left:81%}.object-chart04{left:81%}.description04{font-size:10px}}
+@media(max-width:760px){
+.immersive-home .immersive-nav{height:76px;padding:0 7%}
+.immersive-nav .menu-toggle{width:40px;height:40px;font-size:23px}
+.brand04{left:7%;top:13%;width:167px}
+.brand04>span{font-size:7px}
+.word-anchor04{top:32%;width:92%}
+.scene04[data-scene="marketing"] .word-anchor04{width:86%}
+.scene04[data-scene="criacao"] .word-anchor04{width:74%}
+.letter-art05{height:72px}
+.character-anchor04,.scene04[data-scene="marketing"] .character-anchor04,.scene04[data-scene="criacao"] .character-anchor04{top:41%;left:54%;height:25%;width:60%}
+.object-film04,.scene04[data-scene="marketing"] .object-voice04,.object-pencil04{left:7%;top:49%;width:65px}
+.object-drone04,.object-chart04,.object-palette04{left:78%;top:43%;width:68px}
+.caption04{left:8%;right:8%;width:auto;bottom:13%;text-align:center}
+.description04{font-size:9px;max-width:none;line-height:1.6}
+.mantra04{font-size:8px;margin-top:7px}
+.destination04{font-size:9px;padding:10px 14px;margin-top:14px}
+.bottom04{left:7%;right:7%;bottom:20px}
+.discover04{display:none}
+.arrow04{font-size:35px;padding:8px;top:49%}
+}

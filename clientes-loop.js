@@ -1,0 +1,1 @@
+(()=>{const rail=document.querySelector('.client-loop');if(!rail)return;const button=rail.querySelector('button');button.addEventListener('click',()=>{const paused=rail.classList.toggle('is-paused');button.setAttribute('aria-pressed',String(paused));button.textContent=paused?'Retomar clientes':'Pausar clientes';});})();

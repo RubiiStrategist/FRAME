@@ -1,0 +1,77 @@
+/* HOME 04: independent scene compositions and layered motion. */
+.home04{--cursor-x:50%;--cursor-y:50%;min-height:740px;overflow:clip;perspective:1200px}
+.home04 .cinematic-atmosphere{transition:filter 1.3s,opacity 1.3s}
+.home04[data-active-scene="marketing"] .cinematic-atmosphere{filter:hue-rotate(-12deg);opacity:.9}
+.home04[data-active-scene="criacao"] .cinematic-atmosphere{filter:hue-rotate(10deg);opacity:1}
+.brand04{position:absolute;z-index:20;top:12%;left:50%;transform:translateX(-50%);width:clamp(210px,23vw,360px);text-align:center}
+.brand04 img{width:100%;height:auto;max-height:105px;object-fit:contain}
+.brand04>span{display:block;font-size:11px;letter-spacing:.29em;margin-top:12px;color:#f3e5e1}
+.scenes04,.scene04{position:absolute;inset:0}
+.scene04{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .48s ease,visibility .48s}
+.scene04.is-active{opacity:1;visibility:visible;pointer-events:auto;z-index:3}
+.scene04.is-leaving{visibility:visible;opacity:0;z-index:2}
+.word-anchor04{position:absolute;top:37%;left:50%;transform:translate(-50%,-50%);width:92%;z-index:3;text-align:center}
+.word04{display:inline-block;position:relative;font-family:Impact,'Arial Black',Arial,sans-serif;font-weight:900;font-size:clamp(85px,11.3vw,215px);line-height:.98;letter-spacing:-.025em;color:#fff;white-space:nowrap;margin:0}
+.scene04[data-scene="criacao"] .word04{font-size:clamp(100px,13vw,245px);letter-spacing:.015em}
+.word04:after{content:attr(data-word);position:absolute;inset:0;pointer-events:none;color:transparent;background:radial-gradient(ellipse 200px 140px at var(--word-x,50%) var(--word-y,50%),#fff 0%,#fff5cf 20%,#ff9780 38%,#ff533a44 58%,transparent 80%);background-clip:text;-webkit-background-clip:text;filter:drop-shadow(0 0 18px #ff5139b3);opacity:0;transition:opacity .4s}
+.home04.is-pointing .scene04.is-active .word04:after{opacity:1}
+.halo04{position:absolute;inset:0;pointer-events:none;z-index:5;opacity:0;background:radial-gradient(circle 250px at var(--cursor-x) var(--cursor-y),#ff6b372d,transparent 76%);mix-blend-mode:screen;transition:opacity .5s}
+.home04.is-pointing .halo04{opacity:1}
+.character-anchor04{position:absolute;left:52%;top:44%;height:38%;width:34%;transform:translateX(-50%);z-index:6}
+.scene04[data-scene="marketing"] .character-anchor04{left:63%;width:35%;height:39%;top:43%}
+.scene04[data-scene="criacao"] .character-anchor04{left:40%;height:39%;width:35%;top:43%}
+.character-anchor04 .enter04,.character-anchor04 .character-float04,.character-anchor04 .pull04{height:100%;width:100%}
+.mascot04{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 15px 30px #000a);transition:filter .5s,scale .5s;cursor:crosshair;user-select:none;-webkit-user-drag:none}
+.mascot04:hover{filter:drop-shadow(0 0 25px #ff6a42aa) brightness(1.12);scale:1.035}
+.pull04{transform:translate3d(var(--pull-x,0px),var(--pull-y,0px),0);will-change:transform}
+.object04{position:absolute;z-index:7;display:block;width:clamp(90px,11vw,175px);text-align:center}
+.object04 img{width:100%;height:auto;filter:drop-shadow(0 15px 25px #0009);transition:filter .4s,scale .5s;user-select:none;-webkit-user-drag:none}
+.object04 .pull04>span{font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:#ebd5cf;display:block;white-space:nowrap;position:absolute;top:100%;left:50%;translate:-50% 8px;opacity:0;transition:opacity .3s,translate .3s}
+.object04:hover img,.object04:focus-visible img{filter:drop-shadow(0 0 20px #ff603abf) brightness(1.25);scale:1.12}
+.object04:hover .pull04>span,.object04:focus-visible .pull04>span{opacity:1;translate:-50% 0}
+.object-film04{left:15%;top:57%;rotate:-16deg}
+.object-drone04{left:76%;top:49%;width:clamp(100px,14vw,215px);rotate:9deg}
+.object-lens04{left:71%;top:72%;width:62px;rotate:-13deg;opacity:.7}
+.scene04[data-scene="marketing"] .object-voice04{left:12%;top:49%;rotate:-15deg}
+.object-chart04{left:79%;top:59%;rotate:9deg}
+.scene04[data-scene="marketing"] .object-lens04{left:37%;top:73%;width:55px}
+.object-pencil04{left:13%;top:52%;rotate:-12deg}
+.object-palette04{left:76%;top:55%;rotate:11deg}
+.scene04[data-scene="criacao"] .object-lens04{left:61%;top:48%;width:58px}
+.note04{position:absolute;left:14%;top:74%;font-size:13px;line-height:1.5;max-width:240px;letter-spacing:-.01em;color:#d1bbb4;z-index:9}
+.scene04[data-scene="marketing"] .note04{left:23%;top:65%;max-width:220px;font-size:19px;color:#ead9d2}
+.scene04[data-scene="criacao"] .note04{left:65%;top:74%;max-width:230px}
+.caption04{position:absolute;left:10%;right:10%;bottom:7.5%;text-align:center;z-index:10}
+.description04{font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:clamp(13px,1.25vw,21px);line-height:1.6;letter-spacing:.07em;color:#fff}
+.mantra04{font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:clamp(10px,.9vw,15px);line-height:1.6;letter-spacing:.12em;color:#b9a5a0;margin-top:4px}
+.destination04{display:inline-block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid #ffffff50;padding-bottom:6px;margin-top:12px;color:#f1dcd4;transition:color .3s,text-shadow .3s}
+.destination04:hover{color:#fff;text-shadow:0 0 16px #ff7d51}
+.reactive04{text-shadow:0 0 calc(var(--light-level,0) * 24px) rgb(255 130 80 / var(--light-level,0))}
+.arrow04{position:absolute;z-index:30;top:49%;background:transparent;color:white;border:0;font-size:65px;font-weight:200;line-height:1;padding:12px 20px;transition:color .3s,scale .3s}
+.arrow04:hover{color:#ff9b78;scale:1.15}.prev04{left:0}.next04{right:0}
+.bottom04{position:absolute;left:30px;right:30px;bottom:18px;display:flex;align-items:center;justify-content:space-between;z-index:30;min-height:35px}
+.discover04{font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:#d5c3bd;margin-left:145px}
+.dots04{display:flex;align-items:center;gap:9px;position:absolute;left:50%;transform:translateX(-50%)}
+.dots04 button{border:1px solid #efddd7;width:14px;height:14px;border-radius:50%;background:transparent;padding:0;position:relative;transition:background .3s,scale .3s}
+.dots04 button.active{background:#f7ede6;scale:1.12}.dots04 button:hover{box-shadow:0 0 14px #ff8055}
+.motion-controls04{display:flex;gap:14px;align-items:center;margin-left:auto}
+.motion-toggle04{border:0;background:transparent;color:#bca9a1;font-size:8px;text-transform:uppercase;letter-spacing:.06em;padding:10px}
+.autoplay04{border:1px solid #ffffff55;border-radius:50%;width:34px;height:34px;background:#ffffff08;color:white;font-size:14px}
+body[data-motion="on"] .scene04.is-active .enter04{animation:drop04 1000ms cubic-bezier(.18,.8,.24,1) var(--delay,0ms) both!important}
+body[data-motion="on"] .scene04.is-active .word04{animation:title04 1000ms cubic-bezier(.18,.75,.2,1) both!important}
+body[data-motion="on"] .scene04.is-active .caption04{animation:title04 950ms ease 300ms both!important}
+body[data-motion="on"] .scene04.is-active .float04{animation:float04 7s ease-in-out var(--phase,0s) infinite!important}
+body[data-motion="on"] .scene04.is-active .character-float04{animation:character04 7.4s ease-in-out infinite!important}
+body[data-motion="on"] .scene04[data-scene="marketing"].is-active .character-float04{animation-duration:8.4s!important}
+body[data-motion="on"] .scene04[data-scene="criacao"].is-active .character-float04{animation-duration:6.8s!important}
+body[data-motion="off"] .scene04 *{animation:none!important;transition:opacity .12s!important}
+body[data-motion="off"] .scene04 .pull04{transform:none!important}
+body.page-inactive .scene04.is-active .enter04,body.page-inactive .scene04.is-active .float04,body.page-inactive .scene04.is-active .character-float04,.home04.motion-suspended04 .scene04.is-active .enter04,.home04.motion-suspended04 .scene04.is-active .float04,.home04.motion-suspended04 .scene04.is-active .character-float04{animation-play-state:paused!important}
+@keyframes drop04{0%{opacity:0;transform:translate3d(0,-65px,0) rotate(-8deg) scale(.91);filter:blur(5px)}65%{opacity:1;transform:translate3d(0,9px,0) rotate(1.5deg) scale(1.015);filter:blur(0)}100%{opacity:1;transform:none;filter:blur(0)}}
+@keyframes title04{0%{opacity:0;transform:translateY(25px);filter:blur(12px)}100%{opacity:1;transform:none;filter:blur(0)}}
+@keyframes float04{0%,100%{transform:translate3d(0,0,0) rotate(-3deg)}50%{transform:translate3d(5px,-15px,0) rotate(4deg)}}
+@keyframes character04{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-12px) rotate(1deg)}}
+@media(max-width:1050px){.discover04{display:none}.note04{font-size:11px;max-width:170px}.scene04[data-scene="marketing"] .note04{font-size:15px;left:19%;max-width:180px}.object04{width:110px}.object-drone04{width:145px}.brand04{top:14%;width:260px}}
+@media(max-width:760px){.home04{min-height:700px}.brand04{top:10.5%;width:210px}.brand04 img{max-height:75px}.brand04>span{font-size:8px;margin-top:8px;letter-spacing:.23em}.word-anchor04{top:29%;width:95%}.word04{font-size:13vw}.scene04[data-scene="criacao"] .word04{font-size:18vw}.character-anchor04,.scene04[data-scene="marketing"] .character-anchor04,.scene04[data-scene="criacao"] .character-anchor04{top:36%;height:37%;width:84%;left:50%}.scene04[data-scene="marketing"] .character-anchor04{left:55%;width:80%}.scene04[data-scene="criacao"] .character-anchor04{left:46%;width:90%}.object04{width:66px}.object-film04{left:8%;top:51%;rotate:-20deg}.object-drone04{left:75%;top:38%;width:85px}.object-lens04{left:79%;top:65%;width:35px}.scene04[data-scene="marketing"] .object-voice04{left:6%;top:40%;width:72px}.object-chart04{left:77%;top:60%;width:76px}.scene04[data-scene="marketing"] .object-lens04{left:12%;top:66%;width:35px}.object-pencil04{left:3%;top:45%;width:65px}.object-palette04{left:78%;top:48%;width:70px}.scene04[data-scene="criacao"] .object-lens04{left:77%;top:66%;width:35px}.object04 .pull04>span,.note04{display:none}.caption04{left:10%;right:10%;bottom:11.5%}.description04{font-size:11px;line-height:1.8;letter-spacing:.04em}.mantra04{font-size:9px;margin-top:5px;letter-spacing:.06em}.destination04{font-size:8px;margin-top:10px}.arrow04{top:48%;font-size:48px;padding:8px}.bottom04{left:16px;right:16px;bottom:19px}.motion-controls04{gap:5px}.motion-toggle04{position:absolute;right:0;bottom:39px;font-size:7px;padding:8px}.autoplay04{width:32px;height:32px}.dots04 button{width:12px;height:12px}.word04:after{background-size:auto}.brand04>span{color:#d0b8af}.scene04 .pull04{will-change:auto}}
+@media(prefers-reduced-motion:reduce){body:not([data-motion="on"]) .scene04 *{animation:none!important;transition:none!important}}
+@media(min-width:761px){.caption04{bottom:6%}}

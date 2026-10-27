@@ -1,0 +1,1 @@
+Capivara FRAME com câmera apontada ao visitante, textura 3D estilizada, fundo transparente. Imagem gerada com ImageGen integrado.
